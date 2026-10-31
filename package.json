@@ -5,9 +5,20 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "migrate:up": "node-pg-migrate up --config-file migrations.cjs",
+    "migrate:down": "node-pg-migrate down --config-file migrations.cjs",
+    "worker:delivery": "node scripts/run-delivery-worker.js",
+    "worker:delivery-sender": "node scripts/run-delivery-sender.js"
   },
   "dependencies": {
-    "express": "^5.3.0"
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "ipaddr.js": "^2.5.0",
+    "kafkajs": "^2.2.4",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "node-pg-migrate": "^9.0.0"
   }
 }

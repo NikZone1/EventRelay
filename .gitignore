@@ -20,3 +20,7 @@ dist/
 Thumbs.db
 .vscode/*
 !.vscode/extensions.json
+
+# Local HTTPS test certificates and private keys
+tests/certs/
+*.pem
